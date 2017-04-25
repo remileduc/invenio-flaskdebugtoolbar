@@ -22,7 +22,7 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers"""
+"""Invenio module that integrates the flask debug toolbar."""
 
 import os
 
@@ -54,12 +54,11 @@ for reqs in extras_require.values():
     extras_require['all'].extend(reqs)
 
 setup_requires = [
-    'Babel>=1.3',
     'pytest-runner>=2.6.2',
 ]
 
 install_requires = [
-    'Flask-BabelEx>=0.9.2',
+    'flask-debugtoolbar>=0.10.1'
 ]
 
 packages = find_packages()
@@ -89,20 +88,6 @@ setup(
         'invenio_base.apps': [
             'invenio_flaskdebugtoolbar = invenio_flaskdebugtoolbar:InvenioFlaskDebugToolbar',
         ],
-        'invenio_i18n.translations': [
-            'messages = invenio_flaskdebugtoolbar',
-        ],
-        # TODO: Edit these entry points to fit your needs.
-        # 'invenio_access.actions': [],
-        # 'invenio_admin.actions': [],
-        # 'invenio_assets.bundles': [],
-        # 'invenio_base.api_apps': [],
-        # 'invenio_base.api_blueprints': [],
-        # 'invenio_base.blueprints': [],
-        # 'invenio_celery.tasks': [],
-        # 'invenio_db.models': [],
-        # 'invenio_pidstore.minters': [],
-        # 'invenio_records.jsonresolver': [],
     },
     extras_require=extras_require,
     install_requires=install_requires,

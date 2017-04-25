@@ -24,6 +24,7 @@
 Authors
 =======
 
-Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers
+Invenio module that integrates the flask debug toolbar.
 
 - CERN <info@inveniosoftware.org>
+- Rémi Ducceschi <remi.ducceschi@gmail.com>

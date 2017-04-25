@@ -22,7 +22,14 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers"""
+"""Invenio module that integrates the flask debug toolbar.
+
+This is a module for developpers. See Flask-DebugToolbar for more information
+on it: https://flask-debugtoolbar.readthedocs.io/en/latest/
+
+Simply install this module and the toolbar will be enabled if you run Invenio
+in debug mode.
+"""
 
 from __future__ import absolute_import, print_function
 

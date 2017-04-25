@@ -22,14 +22,13 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers"""
+"""Invenio module that integrates the flask debug toolbar."""
 
 from __future__ import absolute_import, print_function
 
-from flask_babelex import gettext as _
+from flask_debugtoolbar import DebugToolbarExtension
 
 from . import config
-from .views import blueprint
 
 
 class InvenioFlaskDebugToolbar(object):
@@ -37,17 +36,13 @@ class InvenioFlaskDebugToolbar(object):
 
     def __init__(self, app=None):
         """Extension initialization."""
-        # TODO: This is an example of translation string with comment. Please
-        # remove it.
-        # NOTE: This is a note to a translator.
-        _('A translation string')
         if app:
             self.init_app(app)
 
     def init_app(self, app):
         """Flask application initialization."""
         self.init_config(app)
-        app.register_blueprint(blueprint)
+        DebugToolbarExtension(app)
         app.extensions['invenio-flaskdebugtoolbar'] = self
 
     def init_config(self, app):
@@ -58,6 +53,8 @@ class InvenioFlaskDebugToolbar(object):
                 'DEBUG_TB_BASE_TEMPLATE',
                 app.config['BASE_TEMPLATE'],
             )
+        if config.DEBUG_TB_ENABLED is None:
+            app.config.setdefault('DEBUG_TB_ENABLED', app.debug)
         for k in dir(config):
             if k.startswith('DEBUG_TB_'):
                 app.config.setdefault(k, getattr(config, k))

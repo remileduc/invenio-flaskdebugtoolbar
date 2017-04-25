@@ -138,7 +138,7 @@ todo_include_todos = False
 html_theme = 'alabaster'
 
 html_theme_options = {
-    'description': 'Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers',
+    'description': 'Invenio module that integrates the flask debug toolbar.',
     'github_user': 'inveniosoftware',
     'github_repo': 'invenio-flaskdebugtoolbar',
     'github_button': False,
@@ -318,7 +318,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'invenio-flaskdebugtoolbar', u'Invenio-FlaskDebugToolbar Documentation',
-   author, 'invenio-flaskdebugtoolbar', 'Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers',
+   author, 'invenio-flaskdebugtoolbar', 'Invenio module that integrates the flask debug toolbar.',
    'Miscellaneous'),
 ]
 

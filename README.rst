@@ -40,11 +40,12 @@
 .. image:: https://img.shields.io/github/license/inveniosoftware/invenio-flaskdebugtoolbar.svg
         :target: https://github.com/inveniosoftware/invenio-flaskdebugtoolbar/blob/master/LICENSE
 
-Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers
+Invenio module that integrates the flask debug toolbar.
 
 *This is an experimental developer preview release.*
 
-TODO: Please provide feature overview of module
+This is a module for developers. See the Flask Debug Toolbar for more
+information: https://flask-debugtoolbar.readthedocs.io/en/latest/
 
 Further documentation is available on
 https://invenio-flaskdebugtoolbar.readthedocs.io/

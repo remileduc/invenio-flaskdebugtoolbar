@@ -22,13 +22,40 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers"""
+"""Invenio module that integrates the flask debug toolbar.
+
+For more information, you can check the Flask Debug Toolbar documentation:
+https://flask-debugtoolbar.readthedocs.io/en/latest/
+"""
 
 # TODO: This is an example file. Remove it if your package does not use any
 # extra configuration variables.
 
-DEBUG_TB_DEFAULT_VALUE = 'foobar'
-"""Default value for the application."""
+DEBUG_TB_ENABLED = None
+"""Enable the toolbar? Default is `app.debug`."""
 
-DEBUG_TB_BASE_TEMPLATE = 'invenio_flaskdebugtoolbar/base.html'
-"""Default base template for the demo page."""
+DEBUG_TB_HOSTS = ()
+"""Whitelist of hosts to display toolbar. Default is any host."""
+
+DEBUG_TB_INTERCEPT_REDIRECTS = True
+"""Should intercept redirects?"""
+
+DEBUG_TB_PANELS = (
+    'flask_debugtoolbar.panels.versions.VersionDebugPanel',
+    'flask_debugtoolbar.panels.timer.TimerDebugPanel',
+    'flask_debugtoolbar.panels.headers.HeaderDebugPanel',
+    'flask_debugtoolbar.panels.request_vars.RequestVarsDebugPanel',
+    'flask_debugtoolbar.panels.config_vars.ConfigVarsDebugPanel',
+    'flask_debugtoolbar.panels.template.TemplateDebugPanel',
+    'flask_debugtoolbar.panels.sqlalchemy.SQLAlchemyDebugPanel',
+    'flask_debugtoolbar.panels.logger.LoggingPanel',
+    'flask_debugtoolbar.panels.route_list.RouteListDebugPanel',
+    'flask_debugtoolbar.panels.profiler.ProfilerDebugPanel',
+)
+"""List of module/class names of panels. Default enables built-in panels."""
+
+DEBUG_TB_PROFILER_ENABLED = False
+"""Enable the profiler on all requests."""
+
+DEBUG_TB_TEMPLATE_EDITOR_ENABLED = False
+"""Enable the template editor."""

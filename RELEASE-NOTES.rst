@@ -7,7 +7,7 @@ Invenio-FlaskDebugToolbar v0.1.0 was released on TBD, 2017.
 About
 -----
 
-Invenio module that integrates the flask debug toolbar into the platform. Useful for developpers
+Invenio module that integrates the flask debug toolbar.
 
 *This is an experimental developer preview release.*
 

@@ -40,20 +40,13 @@ def test_version():
 def test_init():
     """Test extension initialization."""
     app = Flask('testapp')
+    app.config.update(SECRET_KEY='SECRET_KEY')
     ext = InvenioFlaskDebugToolbar(app)
     assert 'invenio-flaskdebugtoolbar' in app.extensions
 
     app = Flask('testapp')
+    app.config.update(SECRET_KEY='SECRET_KEY')
     ext = InvenioFlaskDebugToolbar()
     assert 'invenio-flaskdebugtoolbar' not in app.extensions
     ext.init_app(app)
     assert 'invenio-flaskdebugtoolbar' in app.extensions
-
-
-def test_view(app):
-    """Test view."""
-    InvenioFlaskDebugToolbar(app)
-    with app.test_client() as client:
-        res = client.get("/")
-        assert res.status_code == 200
-        assert 'Welcome to Invenio-FlaskDebugToolbar' in str(res.data)
